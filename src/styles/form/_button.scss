@@ -1,0 +1,22 @@
+button.button,
+a.button {
+    display: inline-block;
+    outline: none;
+    color: $white;
+    border-radius: 4px;
+    height: $button-height;
+    line-height: $button-height;
+    font-size: $button-size;
+    text-transform: uppercase;
+    user-select: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background: $blue;
+    border: 1px solid transparent;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background $average ease 0s, box-shadow $average ease 0s, opacity $average ease 0s, transform $average ease 0s;
+}

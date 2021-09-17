@@ -1,0 +1,27 @@
+// Global Utils
+@import './utils/variables';
+@import './utils/animation';
+
+// Resets styles to control the style base across browsers
+@import './base/reset';
+
+// Base Styles
+@import './base/global';
+@import './base/fonts';
+@import './base/font_awesome';
+
+// Global Components
+@import './loadings/bar_spinner';
+@import './form/button';
+@import './form/input';
+
+// Application Pages
+@import '../pages/Home/Home';
+@import '../pages/Favorites/Favorites';
+@import '../pages/GifDetails/GifDetails';
+@import '../pages/404/404';
+
+// Application Components
+@import '../core/components/AppFrame/AppFrame';
+@import '../core/components/Header/Header';
+@import '../core/components/GifMosaic/GifMosaic';

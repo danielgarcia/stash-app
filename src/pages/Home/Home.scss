@@ -1,0 +1,62 @@
+.home-page {
+    .bar-spinner {
+        margin-top: 50px;
+    }
+
+    .search-block {
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $blue;
+        margin-bottom: 10px;
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }   
+    }
+
+    .image-mosaic {
+        line-height: 0;
+        column-count: 4;
+        column-gap: 8px;  
+
+        .card {
+            position: relative;
+            display: inline-block;
+
+            .hover {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 100%;
+                height: calc(100% - 8px);
+                background: rgba(0, 0, 0, .5);
+                opacity: 0;
+                color: $white;
+                transition: opacity $fast;
+                cursor: pointer;
+
+                .favorite {
+                    position: absolute;
+                    font-size: 28px;
+                    top: 15px;
+                    right: 15px;
+                }
+            }
+            
+            &:hover .hover {
+                opacity: 1;
+            }
+        }
+
+        img {
+            width: 100%;
+            margin: 4px 0;
+            height: auto;
+        }
+    }
+}

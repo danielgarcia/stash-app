@@ -1,0 +1,55 @@
+.gif-mosaic {
+    line-height: 0;
+    column-count: 2;
+    column-gap: 8px;  
+
+    img {
+        width: 100%;
+        margin: 4px 0;
+        height: auto;
+    }
+
+    @media(min-width: $mobile) {
+        column-count: 3;
+    }
+    @media(min-width: $tablet) {
+        column-count: 4;
+    }
+}
+
+.gif-card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    .hover {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        height: calc(100% - 8px);
+        background: rgba(0, 0, 0, .5);
+        opacity: 0;
+        color: $white;
+        transition: opacity $fast;
+        cursor: pointer;
+
+        .favorite {
+            position: absolute;
+            font-size: 28px;
+            top: 15px;
+            right: 15px;
+            transform: scale(1);
+            transition: transform $fast;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    
+    &:hover .hover {
+        opacity: 1;
+    }
+}

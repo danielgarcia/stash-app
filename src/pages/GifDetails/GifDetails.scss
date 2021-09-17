@@ -1,0 +1,40 @@
+.gif-details-page {
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 40px;
+        border-bottom: 1px solid $blue;
+        padding: 20px 0;
+        margin-bottom: 20px;
+        color: $blue;
+        font-weight: bold;
+    }
+
+    .error-msg {
+        color: $blue;
+        text-align: center;
+        font-size: 18px;
+        i {
+            font-size: 80px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+    
+    .gif {
+        text-align: center;
+    }
+
+    .gif-card {
+        width: auto;
+        margin: auto;
+
+        .hover {
+            cursor: default;
+            .favorite {
+                cursor: pointer;
+            }
+        }
+    }
+}

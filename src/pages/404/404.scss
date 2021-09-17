@@ -1,0 +1,46 @@
+.four-o-four-error {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-align: center;
+    // background-image: url('/assets/images/404.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .not-found-block {
+        padding: 20px;
+
+        h3 {
+            position: relative;
+            font-size: 70px;
+            margin-bottom: 20px;
+            color: $white;
+
+            &.four {
+                font-size: 210px;
+                font-weight: bold;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            color: $white;
+            z-index: 1;
+            position: relative;
+        }
+    }
+}

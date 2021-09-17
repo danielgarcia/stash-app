@@ -1,0 +1,96 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": ["react", "@typescript-eslint", "jest"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "react/sort-comp": [0],
+    "linebreak-style": "off",
+    "import/no-cycle": "off",
+    "no-plusplus": ["error",
+      { "allowForLoopAfterthoughts": true } // allow ++/-- on for loop.
+    ],
+    // BUGBUG: we need to remove this rules for tab index support.
+    "jsx-a11y/interactive-supports-focus": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/jsx-one-expression-per-line": [0],
+    "react/jsx-no-bind": [0],
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+    "jsx-a11y/label-has-for": [ "error", {
+      "required": {
+        "some": [ "nesting", "id"  ]
+      }
+    }],
+
+    "object-curly-newline": [0],
+
+    "react/state-in-constructor": ["off"],
+
+    // BUGBUG: should we use stateless components?
+    "react/prefer-stateless-function": [0],
+
+    // We don't want to force destructiong assigment always.
+    "react/destructuring-assignment": [0],
+
+    // Indent NOTE: you must disable the base rule as it can report incorrect errors
+    "indent": "off",
+
+    "@typescript-eslint/indent": ["error", 4],
+
+    // Indent JSX with 4 spaces
+    "react/jsx-indent": ["error", 4],
+
+    // Indent props with 4 spaces
+    "react/jsx-indent-props": ["error", 4],
+    
+    // Indent switch statements, off to avoid conflict with "indent" rule.
+    "default-case": "off",
+
+    // Allow switch statement declarations.
+    "no-case-declarations": "off",
+
+    // Length aprops.
+    "max-len": [
+      "warn",
+      {
+        "code": 200,
+        "tabWidth": 4,
+        "comments": 160,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ]
+  }
+}

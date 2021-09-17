@@ -1,0 +1,7 @@
+.app-frame {
+    padding: 0 20px;
+
+    @media(min-width: $tablet) {
+        padding: 0px;
+    }
+}

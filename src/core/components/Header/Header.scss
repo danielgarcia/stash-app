@@ -1,0 +1,55 @@
+header {
+    display: inline-block;
+    width: 100%;
+    height: $header-height;
+
+    .logo {
+        padding: 20px 0;
+        display: block;
+        float: left;
+        a {
+            text-decoration: none;
+            display: inline-block;
+            img {
+                height: 34px;
+                width: auto;
+            }
+            span {
+                font-size: 26px;
+                display: inline-block;
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .nav {
+        display: block;
+        float: right;
+        li {
+            a {
+                text-decoration: none;
+                line-height: $header-height;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: $blue;
+                transition: color $fast;
+                &:hover {
+                    color: darken($blue, 15%);
+                    transition: color $slow;
+                }
+            }
+        }
+    }
+
+    .gif-logo-text {
+        background-image: -webkit-gradient(linear,left top,right top,color-stop(0,#D68AB0),color-stop(0.25,#D8CE5D),color-stop(0.5,#6BD85D),color-stop(0.75,#5DB9D8),color-stop(1,#D85DCB));
+        background-image: -webkit-linear-gradient(left,#D68AB0 0%,#D8CE5D 25%,#6BD85D 50%,#5DB9D8 75%,#D85DCB 100%);
+        background-size: 1000% 1000%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: Text-Legendary 6s infinite;
+        color: #33cccc;
+        white-space: nowrap;
+        font-family: 'Luckiest Guy', cursive;
+    }
+}

@@ -1,0 +1,50 @@
+/* Dimensions */
+$site-width: 1024px;
+$header-height: 75px;
+$appMenu-width: 200px;
+
+/* Inputs */
+$input-height: 40px;
+$button-height: $input-height;
+$select-height: $input-height;
+$input-size: 15px;
+$button-size: $input-size;
+$select-size: $input-size;
+
+/* Font Names */
+$sans: "Lato", "sans-serif",
+"Helvetica",
+"Arial";
+$serif: "Bitter",
+"serif";
+$script: "script";
+
+/* Z-Index */
+$level1: 1;
+$level2: 2;
+$level3: 3;
+$level4: 4;
+$level5: 5;
+
+/* Speeds */
+$quick: .05s;
+$fast: .15s;
+$average: .3s;
+$slow: .65s;
+$slower: 1s;
+
+/* Breakpoints */
+$mobile: 768px;
+$tablet: 992px;
+$desktop: 1200px;
+
+/* Global Colors */
+$black: #333;
+$off-black: #4a5358;
+$white: #ffffff;
+$off-white: #f6f9fa;
+
+$blue: #2Ec4F1;
+
+$border-color: $off-black;
+$background-color: $off-white;
