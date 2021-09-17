@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiKey } from '../core/stash/constants';
 import { Gif, IGif } from '../core/stash/Gif';
 
 interface Response {
@@ -22,7 +23,7 @@ async function getGifs(query: string, page: number): Promise<{ gifs: Gif[], erro
     const offset = limit * page;
     let moreGifsAvailable = true;
     try {
-        const response = await axios.get<JSON, Response>('https://api.giphy.com/v1/gifs/search', { params: { api_key: 'GZKGwdu6xlIM0iV58yFKJOFLqj0NLXFw', q: query, limit, offset } });
+        const response = await axios.get<JSON, Response>('https://api.giphy.com/v1/gifs/search', { params: { api_key: apiKey, q: query, limit, offset } });
         gifs = response.data.data.map((gif: IGif) => new Gif(gif)) || [];
 
         if (gifs.length < limit || !gifs.length) moreGifsAvailable = false;
