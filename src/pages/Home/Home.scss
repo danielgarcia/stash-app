@@ -18,45 +18,13 @@
         }   
     }
 
-    .image-mosaic {
-        line-height: 0;
-        column-count: 4;
-        column-gap: 8px;  
-
-        .card {
-            position: relative;
-            display: inline-block;
-
-            .hover {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 0;
-                width: 100%;
-                height: calc(100% - 8px);
-                background: rgba(0, 0, 0, .5);
-                opacity: 0;
-                color: $white;
-                transition: opacity $fast;
-                cursor: pointer;
-
-                .favorite {
-                    position: absolute;
-                    font-size: 28px;
-                    top: 15px;
-                    right: 15px;
-                }
-            }
-            
-            &:hover .hover {
-                opacity: 1;
-            }
-        }
-
-        img {
-            width: 100%;
-            margin: 4px 0;
-            height: auto;
-        }
+    .no-more {
+        font-size: 16px;
+        color: $blue;
+        display: inline-block;
+        width: 100%;
+        padding: 40px 0 20px;
+        text-align: center;
+        text-transform: uppercase;
     }
 }

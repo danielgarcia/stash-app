@@ -3,6 +3,7 @@ import { Link, NavLink, RouteComponentProps } from 'react-router-dom';
 import { routes } from '../../../Routes';
 
 class Header extends React.Component<RouteComponentProps> {
+    // Main Render Function
     public render(): JSX.Element {
         return (
             <header>

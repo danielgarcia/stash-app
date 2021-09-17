@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { getGif } from '../../usecases/getGif';
-import { Gif } from '../../core/stash/Gif';
 import GifCard from '../../core/components/GifMosaic/GifCard';
+import LoadingBars from '../../core/components/LoadingBars/LoadingBars';
+import { Gif } from '../../core/stash/Gif';
+import { getGif } from '../../usecases/getGif';
 
 interface Params {
     gifID: string;
@@ -15,10 +16,6 @@ interface State {
 }
 
 class GifDetails extends React.Component<RouteComponentProps<Params>, State> {
-    public constructor(props: RouteComponentProps<Params>) {
-        super(props);
-    }
-
     // State of the component
     public readonly state: Readonly<State> = {
         gif: new Gif(),
@@ -28,7 +25,7 @@ class GifDetails extends React.Component<RouteComponentProps<Params>, State> {
 
     /**
      * Checks if the Gif is saved as favorite.
-     * @returns {void}
+     * @returns {Promise<void>}
      */
     public async componentDidMount(): Promise<void> {
         const { gifID } = this.props.match.params;
@@ -37,6 +34,10 @@ class GifDetails extends React.Component<RouteComponentProps<Params>, State> {
         this.setState({ gif, loading: false, error });
     }
 
+    /**
+     * Renders the error message.
+     * @returns {JSX.Element} html element.
+     */
     public renderError(): JSX.Element {
         const { error } = this.state;
         if (error === '') return <></>;
@@ -48,14 +49,15 @@ class GifDetails extends React.Component<RouteComponentProps<Params>, State> {
         );
     }
 
+    /**
+     * Renders the gif.
+     * @returns {JSX.Element} html element.
+     */
     public renderGif(): JSX.Element {
         const { gif } = this.state;
         if (gif.title === '') return <></>;
-        return (
-            <div className="gif">
-                <GifCard item={gif} />
-            </div>
-        );
+
+        return <div className="gif"><GifCard item={gif} /></div>;
     }
 
     // Main Render Function
@@ -66,7 +68,7 @@ class GifDetails extends React.Component<RouteComponentProps<Params>, State> {
             <div className="gif-details-page">
                 <h1>{loading ? 'Loading Gif...' : gif.title}</h1>
                 {this.renderError()}
-                {this.renderGif()}
+                {loading ? <LoadingBars /> : this.renderGif()}
             </div>
         );
     }

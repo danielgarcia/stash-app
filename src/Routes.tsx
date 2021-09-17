@@ -31,6 +31,7 @@ class Routes extends React.Component {
                         <Route exact path={routes.Search.route} component={Home} />
                         <Route exact path={routes.Favorites.route} component={Favorites} />
                         <Route exact path={routes.GifDetails.route} component={GifDetails} />
+                        <Route component={FourOfour} />
                     </Switch>
                     <Route path={routes[404].route} component={FourOfour} />
                 </AppFrame>

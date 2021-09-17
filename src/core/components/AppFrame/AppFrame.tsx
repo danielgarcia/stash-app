@@ -3,10 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import Header from '../Header/Header';
 
 class AppFrame extends React.Component<RouteComponentProps> {
-    public constructor(props: RouteComponentProps) {
-        super(props);
-    }
-
+    // Main Render Function
     public render(): JSX.Element {
         return (
             <div className="app-frame wrapper">

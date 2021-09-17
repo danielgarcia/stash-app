@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, ResponseType } from 'axios';
+import axios from 'axios';
 import { Gif, IGif } from '../core/stash/Gif';
 
 interface Response {
@@ -10,8 +10,8 @@ interface Response {
 }
 
 /**
- * Get user information.
- * @returns {Promise<{ user: Gif, err: string }>} returns rentiso user.
+ * Get gif information.
+ * @returns {Promise<{ user: Gif, err: string }>} returns gif.
  */
 async function getGif(gifID: string): Promise<{ gif: Gif, error: string }> {
     let gif: Gif = new Gif();

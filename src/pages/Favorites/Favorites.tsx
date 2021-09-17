@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { getGifs } from '../../usecases/getGifs';
-import { Gif } from '../../core/stash/Gif';
-import { auth } from '../../core/services/auth';
 import GifMosaic from '../../core/components/GifMosaic/GifMosaic';
+import LoadingBars from '../../core/components/LoadingBars/LoadingBars';
+import { auth } from '../../core/services/auth';
+import { Gif } from '../../core/stash/Gif';
 
 interface State {
     loading: boolean;
@@ -11,9 +11,8 @@ interface State {
 }
 
 class Favorites extends React.Component<RouteComponentProps, State> {
-    public constructor(props: RouteComponentProps) {
-        super(props);
-    }
+    // Unsubscribes to user updates.
+    private unsubscribeUser = () => {};
 
     // State of the component
     public readonly state: Readonly<State> = {
@@ -23,10 +22,19 @@ class Favorites extends React.Component<RouteComponentProps, State> {
 
     /**
      * Checks if the Gif is saved as favorite.
-     * @returns {void}
+     * @returns {Promise<void>}
      */
     public async componentDidMount(): Promise<void> {
-        this.setState({ gifs: Object.values(auth.loggedUser.favorite) });
+        this.unsubscribeUser = auth.subscribeToUser((user) => {
+            this.setState({ gifs: Object.values(user.favorite), loading: false });
+        });
+    }
+
+    /**
+     * Component unmount logic.
+     */
+    public componentWillUnmount(): void {
+        this.unsubscribeUser();
     }
 
     // Main Render Function
@@ -37,6 +45,7 @@ class Favorites extends React.Component<RouteComponentProps, State> {
             <div className="favorites-page">
                 <h1>My Favorites</h1>
                 <GifMosaic gifs={gifs} />
+                {loading ? <LoadingBars /> : null}
             </div>
         );
     }

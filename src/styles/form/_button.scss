@@ -14,9 +14,24 @@ a.button {
     font-weight: 600;
     background: $blue;
     border: 1px solid transparent;
+    text-decoration: none;
     text-align: center;
     position: relative;
     overflow: hidden;
     white-space: nowrap;
-    transition: background $average ease 0s, box-shadow $average ease 0s, opacity $average ease 0s, transform $average ease 0s;
+    transition: background $average ease 0s;
+
+    &:hover {
+        background: darken($blue, 10%);
+        transition: background $fast ease 0s;
+    }
+
+    &:disabled,
+    &[disabled] {
+        border-bottom: 1px solid darken($blue, 5%);
+        background: $blue;
+        opacity: 0.65;
+        transform: scale(1) !important;
+        cursor: not-allowed;
+    }
 }

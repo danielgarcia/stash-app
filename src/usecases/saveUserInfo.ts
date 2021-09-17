@@ -1,13 +1,13 @@
 import { User } from '../core/stash/User';
 
 /**
- * Get user information.
+ * Saves user information.
  * @param {React.ChangeEvent<HTMLInputElement>} e html input event.
- * @returns {Promise<{ err: string }>} returns rentiso user.
+ * @returns {Promise<{ err: string }>} .
  */
-async function saveUserInfo(user: User): Promise<{ err: string }> {
+async function saveUserInfo(user: User): Promise<{ error: string }> {
     localStorage.setItem('stash-user', JSON.stringify(user));
-    return { err: '' };
+    return { error: '' };
 }
 
 export { saveUserInfo };

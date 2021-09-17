@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/main.scss';
 import App from './App';
 import { auth } from './core/services/auth';
 import reportWebVitals from './reportWebVitals';
+import './styles/main.scss';
 
 auth.Init().then((): void => {
     ReactDOM.render(<App />, document.getElementById('stash-app'));
